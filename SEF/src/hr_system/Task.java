@@ -1,5 +1,5 @@
 package hr_system;
-
+import java.util.Scanner;
 public class Task extends TaskArea
 {
 	public String taskId, taskTitle, location, day, taskType, startDate, endDate,
@@ -10,6 +10,13 @@ public class Task extends TaskArea
 	
 	Task[] tasks = new Task[50];		//NOT SURE WHETHER TO STORE ALL TASKS INSIDE TASK CLASS OR NOT...
 
+	//Sreeja to fix START
+	Scanner scanner = new Scanner(System.in);
+	int t_count = 0;
+	//Sreeja to fix END
+	
+	
+	
 	public Task(String taskId, String taskTitle)
 	{
 		this.taskId = taskId;
@@ -20,9 +27,19 @@ public class Task extends TaskArea
 	
 	
 	//SET METHODS
-	public void setTask(String taskId, String taskTitle, String location, String day,
-						String taskType, String startDate, String endDate, String taskQual,
-						String notes, double taskLengthHrs, int time)
+	public void setTask (
+			String taskId, 
+			String taskTitle, 
+			String location, 
+			String day,
+			String taskType, 
+			String startDate, 
+			String endDate, 
+			String taskQual,
+			String notes, 
+			double taskLengthHrs, 
+			int time
+	)
 	{
 		setTaskId(taskId);
 		setTaskTitle(taskTitle);
@@ -92,11 +109,6 @@ public class Task extends TaskArea
 	}	
 	//END OF SET METHODS
 	
-	//Sreeja to fix START
-	Scanner scanner = new Scanner(System.in);
-	tasks[] t = new tasks[20];	
-	int t_count = 0;
-	//Sreeja to fix END
 	
 	public boolean createTask()		//parameters needs to be coded
 	{
@@ -138,18 +150,18 @@ public class Task extends TaskArea
 		System.out.println(" Enter the qualification of the task:");
 		String t_assign= scanner.nextLine();
 		
-        t[t_count] = new tasks();
+        tasks[t_count] = new Tasks();
 
-        t[t_count].setTaskID(t_ID);
-        t[t_count].setTask_lengthHrs(t_len);
-        t[t_count].setTask_title(t_tit);
-        t[t_count].setLocation(t_loc);
-        t[t_count].setTask_type(t_type);
-        t[t_count].setStart_date(t_start);
-        t[t_count].setEnd_date(t_end);
-        t[t_count].setCourse_code(t_courseCode);
-        t[t_count].setTask_qual(t_qual);
-        t[t_count].setAssigned_staff(t_assign);
+        tasks[t_count].setTaskID(t_ID);
+        tasks[t_count].setTask_lengthHrs(t_len);
+        tasks[t_count].setTask_title(t_tit);
+        tasks[t_count].setLocation(t_loc);
+        tasks[t_count].setTask_type(t_type);
+        tasks[t_count].setStart_date(t_start);
+        tasks[t_count].setEnd_date(t_end);
+        tasks[t_count].setCourse_code(t_courseCode);
+        tasks[t_count].setTask_qual(t_qual);
+        tasks[t_count].setAssigned_staff(t_assign);
         
         
         if (t_count < 21)
