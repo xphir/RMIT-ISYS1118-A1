@@ -1,18 +1,17 @@
 package hr_system;
-import java.util.Scanner;
+import java.util.*;
 public class Task extends TaskArea
 {
 	public String taskId, taskTitle, location, day, taskType, startDate, endDate,
 	taskQual, notes;
 	public double taskLengthHrs;
 	public int time;
-	public CasualStaff[] assignedStaff = new CasualStaff[15];
+	public String assignedStaff;
 	
 	Task[] tasks = new Task[50];		//NOT SURE WHETHER TO STORE ALL TASKS INSIDE TASK CLASS OR NOT...
 
 	//Sreeja to fix START
 	Scanner scanner = new Scanner(System.in);
-	int t_count = 0;
 	//Sreeja to fix END
 	
 	
@@ -22,7 +21,14 @@ public class Task extends TaskArea
 		this.taskId = taskId;
 		this.taskTitle = taskTitle;
 	}
+	//GET METHODS
+	public String getTaskID()
+	{
+		return this.taskId;
+	}
 	
+	
+	//END OF GET METHODS
 	
 	
 	
@@ -38,7 +44,8 @@ public class Task extends TaskArea
 			String taskQual,
 			String notes, 
 			double taskLengthHrs, 
-			int time
+			int time,
+			String assignedStaff
 	)
 	{
 		setTaskId(taskId);
@@ -52,6 +59,7 @@ public class Task extends TaskArea
 		setNotes(notes);
 		setTaskLengthHrs(taskLengthHrs);
 		setTime(time);
+		setAssignedStaff(assignedStaff);
 	}
 	public void setTaskId(String taskId)
 	{
@@ -107,76 +115,87 @@ public class Task extends TaskArea
 	{
 		this.time = time;
 	}	
+	
+	public void setAssignedStaff(String assignedStaff)
+	{
+		this.assignedStaff = assignedStaff;
+	}
 	//END OF SET METHODS
 	
 	
 	public boolean createTask()		//parameters needs to be coded
 	{
-		System.out.println("Enter the folllowing details to add a task");  
+		int t_count = 0;
 		
-		System.out.println(" Enter the ID of the task:");
-		String t_ID = scanner.nextLine();
-		
-		System.out.println(" Enter the length of the task:");
-		Double t_len = scanner.nextDouble();
-		
-		System.out.println(" Enter the title of the task:");
-		String t_tit = scanner.nextLine();
+		for (int i = 0; i < tasks.length + 1; i++)
+		{
+			if(tasks[i] == null)
+			{
+				t_count = i;
+				
+				System.out.println("Enter the folllowing details to add a task");  
+				
+				System.out.println(" Enter the ID of the task:");
+				String t_ID = scanner.nextLine();
+				
+				System.out.println(" Enter the length of the task:");
+				Double t_len = scanner.nextDouble();
+				
+				System.out.println(" Enter the title of the task:");
+				String t_tit = scanner.nextLine();
 
-		System.out.println(" Enter the location of the task:");
-		String t_loc = scanner.nextLine();
-		
-		System.out.println(" Enter the day of the task:");
-		String t_day = scanner.nextLine();
-		
-		System.out.println(" Enter the time of the task:");
-		String t_time = scanner.nextLine();
-		
-		System.out.println(" Enter the type of the task:");
-		String t_type = scanner.nextLine();
-		
-		System.out.println(" Enter the start date of the task:");
-		String t_start= scanner.nextLine();
-		
-		System.out.println(" Enter the end date of the task:");
-		String t_end= scanner.nextLine();
-		
-		System.out.println(" Enter the course code of the task:");
-		String t_courseCode= scanner.nextLine();
-		
-		System.out.println(" Enter the qualification of the task:");
-		String t_qual= scanner.nextLine();
-		
-		System.out.println(" Enter the qualification of the task:");
-		String t_assign= scanner.nextLine();
-		
-        tasks[t_count] = new Tasks();
-
-        tasks[t_count].setTaskID(t_ID);
-        tasks[t_count].setTask_lengthHrs(t_len);
-        tasks[t_count].setTask_title(t_tit);
-        tasks[t_count].setLocation(t_loc);
-        tasks[t_count].setTask_type(t_type);
-        tasks[t_count].setStart_date(t_start);
-        tasks[t_count].setEnd_date(t_end);
-        tasks[t_count].setCourse_code(t_courseCode);
-        tasks[t_count].setTask_qual(t_qual);
-        tasks[t_count].setAssigned_staff(t_assign);
-        
-        
-        if (t_count < 21)
-        	t_count++;
+				System.out.println(" Enter the location of the task:");
+				String t_loc = scanner.nextLine();
+				
+				System.out.println(" Enter the day of the task:");
+				String t_day = scanner.nextLine();
+				
+				System.out.println(" Enter the time of the task:");
+				String t_time = scanner.nextLine();
+				
+				System.out.println(" Enter the type of the task:");
+				String t_type = scanner.nextLine();
+				
+				System.out.println(" Enter the start date of the task:");
+				String t_start= scanner.nextLine();
+				
+				System.out.println(" Enter the end date of the task:");
+				String t_end= scanner.nextLine();
+				
+				System.out.println(" Enter the course code of the task:");
+				String t_courseCode= scanner.nextLine();
+				
+				System.out.println(" Enter the qualification of the task:");
+				String t_qual= scanner.nextLine();
+				
+				System.out.println(" Enter the qualification of the task:");
+				String t_assign= scanner.nextLine();
+				
+		        tasks[t_count].setTaskId(t_ID);
+		        tasks[t_count].setTaskLengthHrs(t_len);
+		        tasks[t_count].setTaskTitle(t_tit);
+		        tasks[t_count].setLocation(t_loc);
+		        tasks[t_count].setTaskType(t_type);
+		        tasks[t_count].setStartDate(t_start);
+		        tasks[t_count].setEndDate(t_end);
+		        tasks[t_count].setCourseCode(t_courseCode);
+		        tasks[t_count].setTaskQual(t_qual);
+		        tasks[t_count].setAssignedStaff(t_assign);
+		        
+		        return true;
+			}
+		}
 		return false;
 	}
 	
 	public boolean editTask(int taskNum, String taskId, String taskTitle, String location, String day,
 							String taskType, String startDate, String endDate, String taskQual,
-							String notes, double taskLengthHrs, int time)
+							String notes, double taskLengthHrs, int time, String assignedStaff)
 	{
 		if (tasks[taskNum] != null)
 		{
 			setTask(taskId,taskTitle,location,day,taskType,startDate,endDate,taskQual,notes,taskLengthHrs,
-					time);
+					time,assignedStaff);
 			return true;
 		}
 		return false;
@@ -184,26 +203,24 @@ public class Task extends TaskArea
 	
 	public boolean deleteTask()
 	{
-		int temp1 = 0;     //the task id to be deleted 
+		int taskIndex = 0;     //the task id to be deleted 
         
         System.out.println(" Enter the ID of the task to delete:");
-		String taskID_1 = scanner.nextLine();
+		String taskID = scanner.nextLine();
        	
-        for (tasks ta : t)
+        for (int i = 0; i < tasks.length + 1; i++)
         {
-            if (ta.getTaskID() == taskID_1)
+            if (tasks[i].getTaskID() == taskID)
             {
-                break;
+            	taskIndex = i;
+            	tasks[i] = null;
+                for(int k = taskIndex; taskIndex < tasks.length; k++)
+                {
+                	tasks[k] = tasks[k + 1];
+                }
+                return true;
             }
-            temp1++;
         }
-
-        while (temp1 < t_count)
-        {
-            t[temp1] = t[temp1 + 1];
-            temp1++;
-        }
-        t[temp1] = null;
 		return false;
 	}
 	
