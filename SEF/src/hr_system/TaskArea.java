@@ -4,6 +4,38 @@ public class TaskArea
 {
 	public String courseCode, deptCode, schoolCode;
 	
+	public String getCourseCode()
+	{
+		return courseCode;
+	}
+	
+	public void setCourseCode(String courseCode)
+	{
+		this.courseCode = courseCode;
+	}
+	
+	public String getDeptCode()
+	{
+		return deptCode;
+	}
+	
+	public void setDeptCode(String deptCode)
+	{
+		this.deptCode = deptCode;
+	}
+	
+	public String getSchoolCode()
+	{
+		return schoolCode;
+	}
+	
+	public void setSchoolCode(String schoolCode)
+	{
+		this.schoolCode = schoolCode;
+	}
+	
+	
+	
 	public Task findAreaSC(String scCode)
 	{
 		//code
