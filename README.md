@@ -1,5 +1,4 @@
 # ISYS1118-Assignment
-ISYS1118 Assignment 
 
 Code Work: SEF Folder
 
@@ -8,6 +7,7 @@ SRS Work: Documents Folder
 Databases: Data folder
 
 
+Assignment 1 Work Weighting Breakdown
 
 | Name       		| Email         				| A1 Contribution	|
 |:-----------------:|:-----------------------------:|:-----------------:|
