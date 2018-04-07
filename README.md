@@ -1,5 +1,13 @@
 # ISYS1118-Assignment
-ISYS1118 Assignment Code Work
+ISYS1118 Assignment 
+
+Code Work: SEF Folder
+
+SRS Work: Documents Folder
+
+Databases: Data folder
+
+
 
 | Name       		| Email         				| A1 Contribution	|
 |:-----------------:|:-----------------------------:|:-----------------:|
