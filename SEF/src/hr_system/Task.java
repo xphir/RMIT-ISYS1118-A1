@@ -10,12 +10,10 @@ public class Task extends TaskArea
 	
 	Task[] tasks = new Task[50];		//NOT SURE WHETHER TO STORE ALL TASKS INSIDE TASK CLASS OR NOT...
 
-	//Sreeja to fix START
+
 	Scanner scanner = new Scanner(System.in);
-	//Sreeja to fix END
 	
-	
-	
+
 	public Task(String taskId, String taskTitle)
 	{
 		this.taskId = taskId;
@@ -122,9 +120,71 @@ public class Task extends TaskArea
 	}
 	//END OF SET METHODS
 	
+	//START OF GET METHODS
+	public String getId()
+	{
+		return this.taskId;
+	}
+	
+	public String getTitle()
+	{
+		return this.taskTitle;
+	}
+	
+	public String getLocation()
+	{
+		return this.location;
+	}
+	
+	public String getDay()
+	{
+		return this.day;
+	}
+	
+	public String getTaskType()
+	{
+		return this.taskType;
+	}
+	
+	public String getStartDate()
+	{
+		return this.startDate;
+	}
+	
+	public String getEndDate()
+	{
+		return this.endDate;
+	}
+	
+	public String getTaskQual()
+	{
+		return this.taskQual;
+	}
+	
+	public String getNotes()
+	{
+		return this.notes;
+	}
+	
+	public double getTaskLengthHrs()
+	{
+		return this.taskLengthHrs;
+	}
+	
+	public int getTime()
+	{
+		return this.time;
+	}	
+	
+	public String getAssignedStaff()
+	{
+		return this.assignedStaff;
+	}
+	//END OF GET METHODS
 	
 	public boolean createTask()		//parameters needs to be coded
 	{
+		/*
 		int t_count = 0;
 		
 		for (int i = 0; i < tasks.length + 1; i++)
@@ -133,6 +193,7 @@ public class Task extends TaskArea
 			{
 				t_count = i;
 				
+			*/
 				System.out.println("Enter the folllowing details to add a task");  
 				
 				System.out.println(" Enter the ID of the task:");
@@ -168,9 +229,10 @@ public class Task extends TaskArea
 				System.out.println(" Enter the qualification of the task:");
 				String t_qual= scanner.nextLine();
 				
-				System.out.println(" Enter the qualification of the task:");
+				System.out.println(" Enter the assigned staff member:");
 				String t_assign= scanner.nextLine();
 				
+				/*
 		        tasks[t_count].setTaskId(t_ID);
 		        tasks[t_count].setTaskLengthHrs(t_len);
 		        tasks[t_count].setTaskTitle(t_tit);
@@ -181,11 +243,22 @@ public class Task extends TaskArea
 		        tasks[t_count].setCourseCode(t_courseCode);
 		        tasks[t_count].setTaskQual(t_qual);
 		        tasks[t_count].setAssignedStaff(t_assign);
-		        
+		        */
+				this.setTaskId(t_ID);
+				this.setTaskLengthHrs(t_len);
+				this.setTaskTitle(t_tit);
+				this.setLocation(t_loc);
+				this.setTaskType(t_type);
+				this.setStartDate(t_start);
+				this.setEndDate(t_end);
+				this.setCourseCode(t_courseCode);
+				this.setTaskQual(t_qual);
+				this.setAssignedStaff(t_assign);
+				
 		        return true;
-			}
-		}
-		return false;
+			//}
+		//}
+		//return false;
 	}
 	
 	public boolean editTask(int taskNum, String taskId, String taskTitle, String location, String day,
@@ -222,6 +295,12 @@ public class Task extends TaskArea
             }
         }
 		return false;
+	}
+	
+	public boolean deleteTask2()
+	{
+		this.tasks = null;
+		return true;
 	}
 	
 	public boolean taskAllocate()

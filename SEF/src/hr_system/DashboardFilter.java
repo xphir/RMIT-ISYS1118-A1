@@ -4,17 +4,18 @@ import java.util.*;
 
 
 
-public class DashboardFilter {
+public class DashboardFilter{
 
 	private static final Scanner sc = new Scanner(System.in);
+		
 	
 	public static void main(String[] args)
 	{
 		// DO NOT CHANGE any code main method!
 
-		//Used for testing code
+		//Used for testing code		
 		//startup();
-
+		
 		// declare variables used for menu
 		String userInput;
 		char selection = 0;
@@ -27,11 +28,11 @@ public class DashboardFilter {
 			System.out.println("*** HR Task Assignment Menu ***");
 			System.out.println();
 			
-			System.out.printf("%-25s%s\n", "Create Task", "A");
-			System.out.printf("%-25s%s\n", "Edit Task", "B");
-			System.out.printf("%-25s%s\n", "Delete Task", "C");
-			System.out.printf("%-25s%s\n", "This Menu", "D");
-			System.out.printf("%-25s%s\n", "This Menu", "E");
+			System.out.printf("%-25s%s\n", "Demo Menu (Create > Edit > Delete Tasks )", "A");
+			System.out.printf("%-25s%s\n", "Filler Option 1", "B");
+			System.out.printf("%-25s%s\n", "Filler Option 2", "C");
+			System.out.printf("%-25s%s\n", "Filler Option 3", "D");
+			System.out.printf("%-25s%s\n", "Filler Option 4", "E");
 			System.out.printf("%-25s%s\n", "Exit Program", "X");
 			System.out.println();
 
@@ -56,6 +57,7 @@ public class DashboardFilter {
 		        {
 			        case 'A':
 			        	System.out.println("*** Option A Selected ***");
+			    		startup();
 			        	//methodSelect01();
 			        	break;
 			
@@ -93,6 +95,81 @@ public class DashboardFilter {
 		} 
 		while (selection != 'X');
 	}
+	
+    //used for loading test code
+	private static void startup()
+	   {
+		Task tasks = new Task("001", "TITLE");
+		if (tasks.createTask()) {
+			System.out.println("Task Created");
+		} else {
+			System.out.println("Task Not Created");
+		}
+		
+		System.out.println("Current Task Values");
+		System.out.println("Title: " + tasks.getTitle());
+		System.out.println("Location: " + tasks.getLocation());
+		System.out.println("Day: " + tasks.getDay());
+		System.out.println("Type: " + tasks.getTaskType());
+		System.out.println("Start Date: " + tasks.getStartDate());
+		System.out.println("End Date: " + tasks.getEndDate());
+		System.out.println("Qualifications: " + tasks.getTaskQual());
+		System.out.println("Notes: " + tasks.getNotes());
+		System.out.println("Time: " + tasks.getTime());
+		System.out.println("Staff: " + tasks.getAssignedStaff());
+		System.out.println("");
+		System.out.println("======================================");
+		System.out.println("");
+
+		
+		System.out.println("You will now edit a Task");
+		System.out.println("Type a new task Title");
+		String t_tit = sc.nextLine();
+		
+		if (tasks.editTask(0, tasks.getId(), t_tit, tasks.getLocation(), tasks.getDay(), tasks.getTaskType(), tasks.getStartDate(), tasks.getEndDate(), tasks.getTaskQual(), tasks.getNotes(), tasks.getTaskLengthHrs(), tasks.getTime(), tasks.getAssignedStaff())){
+			System.out.println("Task Created");
+		} else {
+			System.out.println("Task Not Created");
+		}
+		
+		System.out.println("Current Task Values");
+		System.out.println("Title: " + tasks.getTitle());
+		System.out.println("Location: " + tasks.getLocation());
+		System.out.println("Day: " + tasks.getDay());
+		System.out.println("Type: " + tasks.getTaskType());
+		System.out.println("Start Date: " + tasks.getStartDate());
+		System.out.println("End Date: " + tasks.getEndDate());
+		System.out.println("Qualifications: " + tasks.getTaskQual());
+		System.out.println("Notes: " + tasks.getNotes());
+		System.out.println("Time: " + tasks.getTime());
+		System.out.println("Staff: " + tasks.getAssignedStaff());
+		System.out.println("");
+		System.out.println("======================================");
+		System.out.println("");
+		
+		if (tasks.deleteTask2()){
+			System.out.println("Task Created");
+		} else {
+			System.out.println("Task Not Created");
+		}
+		
+		System.out.println("Current Task Values");
+		System.out.println("Title: " + tasks.getTitle());
+		System.out.println("Location: " + tasks.getLocation());
+		System.out.println("Day: " + tasks.getDay());
+		System.out.println("Type: " + tasks.getTaskType());
+		System.out.println("Start Date: " + tasks.getStartDate());
+		System.out.println("End Date: " + tasks.getEndDate());
+		System.out.println("Qualifications: " + tasks.getTaskQual());
+		System.out.println("Notes: " + tasks.getNotes());
+		System.out.println("Time: " + tasks.getTime());
+		System.out.println("Staff: " + tasks.getAssignedStaff());
+		System.out.println("");
+		System.out.println("======================================");
+		System.out.println("");
+		
+		return;
+	   }
 	
 	public void agentLogin()
 	{
