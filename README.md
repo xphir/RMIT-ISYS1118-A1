@@ -1,6 +1,7 @@
 # ISYS1118-Assignment
 
 ***
+## Document Areas
 
 Code Work: /SEF
 
@@ -10,7 +11,7 @@ Databases (not in use): /Data
 
 ***
 
-Assignment 1 Work Weighting Breakdown
+## Assignment 1 Work Weighting Breakdown
 
 | Name       		| Email         				| A1 Contribution	|
 |:-----------------:|:-----------------------------:|:-----------------:|
@@ -20,6 +21,7 @@ Assignment 1 Work Weighting Breakdown
 | Michael Mai		| s3574846@student.rmit.edu.au	| 5%				|
 
 ***
+##Other Notes
 
 Documents Attached
 + Use Case Diagram (See “UML Diagram.pdf”)
