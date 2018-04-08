@@ -22,18 +22,18 @@ Assignment 1 Work Weighting Breakdown
 ***
 
 Documents Attached
-..* Use Case Diagram (See “UML Diagram.pdf”)
-..* Class Diagram (See “UML Diagram.pdf”)
-..* Object Diagram (See “UML Diagram.pdf”)
-..* Interview 1 Recording (See Interview Folder)
-..* Interview 2 Recording (See Interview Folder)
-..* Draft Work (See Draft Work Folder)
-..* Zip file of Code
++ Use Case Diagram (See “UML Diagram.pdf”)
++ Class Diagram (See “UML Diagram.pdf”)
++ Object Diagram (See “UML Diagram.pdf”)
++ Interview 1 Recording (See Interview Folder)
++ Interview 2 Recording (See Interview Folder)
++ Draft Work (See Draft Work Folder)
++ Zip file of Code
 
 Our Code Methods are as follows
-..* Create Task - Sreeja
-..* Edit Task - Alex
-..* Delete Task - Sreeja
-..* Options Menu and Linking code - Elliot
++ Create Task - Sreeja
++ Edit Task - Alex
++ Delete Task - Sreeja
++ Options Menu and Linking code - Elliot
 
 ***
