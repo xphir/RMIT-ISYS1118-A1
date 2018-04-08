@@ -5,7 +5,7 @@
 
 Code Work: /SEF
 
-SRS Work: /documents
+SRS Work: /Documents
 
 Databases (not in use): /Data
 
