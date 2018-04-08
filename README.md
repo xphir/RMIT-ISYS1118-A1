@@ -21,7 +21,7 @@ Databases (not in use): /Data
 | Michael Mai		| s3574846@student.rmit.edu.au	| 5%				|
 
 ***
-##Other Notes
+## Other Notes
 
 Documents Attached
 + Use Case Diagram (See “UML Diagram.pdf”)
